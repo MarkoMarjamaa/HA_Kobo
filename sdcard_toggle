@@ -1,0 +1,2 @@
+#!/bin/sh
+/usr/bin/python3 -u /home/marek/HA_Kobo/HA_Kobo.py &
