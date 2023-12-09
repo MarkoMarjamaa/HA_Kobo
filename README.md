@@ -184,3 +184,5 @@ With this setting you can keep to wifi always on or start and stop wifi only whe
 
 The interface and sensors are what I'm using currently. It will change when I need something else. Feel free to make your own versio of UI. 
 
+![_P1270699](https://github.com/MarkoMarjamaa/HA_Kobo/assets/7473261/9b6e0e6c-343c-4de1-87db-d8688342e159)
+
