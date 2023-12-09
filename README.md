@@ -12,7 +12,7 @@ Github: https://github.com/pasqu4le/kobowm
 ```
 At first, take backup from your current internal Kobo SD card. 
 Open KoboWM image with hex editor like HxD and copy the part 000080000 - 00008006F from your Kobo image to KoboWM image. That part tells what kind of hardware your Kobo has. 
-KoboWM image was created for N905C but it works with other versions, like my B905B, when that part is copied. 
+KoboWM image was created for N905C but it works with other versions, like my N905B, when that part is copied. 
 Write new image to SD. The SD should be at least 16GB. 
 
 ## 3. Setting wifi
