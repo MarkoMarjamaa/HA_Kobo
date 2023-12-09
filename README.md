@@ -1,5 +1,5 @@
 # HA_Kobo
-Kobo Touch N905B running as Home Assistant Dashboard
+Kobo Touch N905B as Home Assistant Dashboard
 
 ## 1. Prevent direct internet access because otherwise Kobo is pushing new firmware
 I removed my router from internet, booted Kobo and gave it Wifi access. Then gave it fixed IP and blocked it from internet. Then connected router back. Kobo now has access only in my home network. ( Do not plug the internet back before you are certain Kobo is blocked from it) 
@@ -183,6 +183,7 @@ With this setting you can keep to wifi always on or start and stop wifi only whe
 ## 11. Then what? 
 
 The interface and sensors are what I'm using currently. It will change when I need something else. Feel free to make your own versio of UI. 
+Of course you don't have to have Home Assistant. Everything that can message via MQTT works. 
 
 ![_P1270699](https://github.com/MarkoMarjamaa/HA_Kobo/assets/7473261/9b6e0e6c-343c-4de1-87db-d8688342e159)
 
