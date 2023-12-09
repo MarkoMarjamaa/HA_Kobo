@@ -56,7 +56,7 @@ your_proxy is the ip of the server you installed Privoxy. You can test if the pr
 ## 6. Update repositories
 Repositories are now archived, so update sources file.
 ```
-vi /etc/apt/sources.list
+sudo vi /etc/apt/sources.list
 ```
 ```
 deb http://archive.debian.org/debian/ jessie main non-free contrib
@@ -65,15 +65,15 @@ deb http://archive.debian.org/debian/ jessie main non-free contrib
 
 Update the repositories through proxy:
 ```
-http_proxy=http://your_proxy:8118 apt-get update
+sudo http_proxy=http://your_proxy:8118 apt-get update
 ```
 Now you can update and install software for instance:
 ```
-http_proxy=http://your_proxy:8118 apt-get install sofware-package
+sudo http_proxy=http://your_proxy:8118 apt-get install sofware-package
 ```
 or with pip/pip3:
 ```
-pip3 --proxy your_proxy:8118 install paho-mqtt
+sudo pip3 --proxy your_proxy:8118 install paho-mqtt
 ```
 
 ( You could also set http_proxy in .profile but I'm paranoid and don't want any other software to use proxy ) 
