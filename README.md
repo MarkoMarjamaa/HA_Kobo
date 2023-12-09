@@ -130,6 +130,10 @@ python3 HA_Kobo.py
 ```
 
 Because you have no data in MQTT yet, only decent data you get is datetimes. 
+MQTT Server address is in HA_Kobo.py so you have to set it first to get access to MQTT. 
+```
+broker_address="homeautomation"
+```
 
 Always close the program with KoboWMs button X !
 
@@ -147,3 +151,36 @@ cp /home/marek/HA_Kobo/ha_icon.png /home/marek/kobowm/icons/media-floppy-symboli
 ```
 
 Now reboot and you'll have new HA button to start HA_Kobo. 
+
+## 10. Home Assistant integration
+
+To send data to HA_Kobo, you create automations: 
+```
+  - alias: Kobo_outside_temperature
+    trigger:
+      - platform: state
+        entity_id: sensor.inner_yard_temp_sensor_temperature
+    action:
+      - service: mqtt.publish
+        data:
+          topic: HA_Kobo/outside_temperature
+          payload_template: "{{ states('sensor.inner_yard_temp_sensor_temperature') }}"
+          retain: true
+```
+To read Kobo battery info, you create MQTT sensor: 
+
+```
+mqtt:
+  sensor:
+  - name: HA_Kobo Battery
+    state_topic: "HA_Kobo/battery"
+    unit_of_measurement: "%"
+```
+## 11. Wifi_stay_on
+
+With this setting you can keep to wifi always on or start and stop wifi only when needed. I used this to test how long the battery will last and wifi on it lasts 10hrs and off 44hrs. So either way, I need to have Kobo with usb always attached. Currently I have wifi always on. 
+
+## 11. Then what? 
+
+The interface and sensors are what I'm using currently. It will change when I need something else. Feel free to make your own versio of UI. 
+
